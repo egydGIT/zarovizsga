@@ -41,13 +41,13 @@ public class KennelTest {
         assertTrue(dog instanceof Husky);
         assertEquals("Morzsi", dog.getName());
     }
-//
-//    @Test
-//    void testNotFound() {
-//        assertThrows(IllegalArgumentException.class,
-//                () -> kennel.findByName("Korom"));
-//    }
-//
+
+    @Test
+    void testNotFound() {
+        assertThrows(IllegalArgumentException.class,
+                () -> kennel.findByName("Korom"));
+    }
+
 //    @Test
 //    void testPlayWith() {
 //        kennel.playWith("Morzsi", 4);
