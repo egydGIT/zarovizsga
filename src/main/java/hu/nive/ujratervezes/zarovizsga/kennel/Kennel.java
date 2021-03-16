@@ -29,4 +29,22 @@ public class Kennel {
         }
         throw new IllegalArgumentException("Cant find dog with this name: " + name);
     }
+
+    public void playWith(String name, int i) {
+        for (Dog dog: dogs) {
+            if(dog.getName().equalsIgnoreCase(name)) {
+                dog.play(i);
+            }
+        }
+    }
+
+    public List<String> getHappyDogNames(int i) {
+        List<String> names = new ArrayList<>();
+        for (Dog dog: dogs) {
+            if ( dog.getHappiness() > i) {
+                names.add(dog.getName());
+            }
+        }
+        return names;
+    }
 }
