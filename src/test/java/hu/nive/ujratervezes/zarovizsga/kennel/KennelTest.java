@@ -9,32 +9,32 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class KennelTest {
 
-//    Kennel kennel = new Kennel();
-//
-//    @BeforeEach
-//    void init() {
-//        Beagle beagle = new Beagle("Bigli");
-//        kennel.addDog(beagle);
-//        Husky husky = new Husky("Morzsi");
-//        kennel.addDog(husky);
-//        Husky husky2 = new Husky("Zokni");
-//        kennel.addDog(husky2);
-//    }
-//
-//    @Test
-//    void testAddDog() {
-//        List<Dog> dogs = kennel.getDogs();
-//        assertEquals(3, dogs.size());
-//        assertEquals("Morzsi", dogs.get(1).getName());
-//    }
-//
-//    @Test
-//    void testFeedAll() {
-//        kennel.feedAll();
-//        assertEquals(2, kennel.getDogs().get(0).getHappiness());
-//        assertEquals(4, kennel.getDogs().get(1).getHappiness());
-//    }
-//
+    Kennel kennel = new Kennel();
+
+    @BeforeEach
+    void init() {
+        Beagle beagle = new Beagle("Bigli");
+        kennel.addDog(beagle);
+        Husky husky = new Husky("Morzsi");
+        kennel.addDog(husky);
+        Husky husky2 = new Husky("Zokni");
+        kennel.addDog(husky2);
+    }
+
+    @Test
+    void testAddDog() {
+        List<Dog> dogs = kennel.getDogs();
+        assertEquals(3, dogs.size());
+        assertEquals("Morzsi", dogs.get(1).getName());
+    }
+
+    @Test
+    void testFeedAll() {
+        kennel.feedAll();
+        assertEquals(2, kennel.getDogs().get(0).getHappiness());
+        assertEquals(4, kennel.getDogs().get(1).getHappiness());
+    }
+
 //    @Test
 //    void testFindByName() {
 //        Dog dog = kennel.findByName("Morzsi");
