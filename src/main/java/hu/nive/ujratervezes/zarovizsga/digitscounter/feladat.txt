@@ -1,0 +1,3 @@
+Számjegyek
+A DigitsCounter osztálynak legyen egy int getCountOfDigits(String s) metódusa,
+mely megszámolja, hogy hány különböző számjegy van a bemeneti Stringben.
