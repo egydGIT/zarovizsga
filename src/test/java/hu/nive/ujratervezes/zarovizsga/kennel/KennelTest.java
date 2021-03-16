@@ -35,12 +35,12 @@ public class KennelTest {
         assertEquals(4, kennel.getDogs().get(1).getHappiness());
     }
 
-//    @Test
-//    void testFindByName() {
-//        Dog dog = kennel.findByName("Morzsi");
-//        assertTrue(dog instanceof Husky);
-//        assertEquals("Morzsi", dog.getName());
-//    }
+    @Test
+    void testFindByName() {
+        Dog dog = kennel.findByName("Morzsi");
+        assertTrue(dog instanceof Husky);
+        assertEquals("Morzsi", dog.getName());
+    }
 //
 //    @Test
 //    void testNotFound() {

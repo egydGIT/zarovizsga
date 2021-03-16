@@ -20,4 +20,13 @@ public class Kennel {
     public List<Dog> getDogs() {
         return dogs;
     }
+
+    public Dog findByName(String name) {
+        for ( Dog dog: dogs) {
+            if (dog.getName().equalsIgnoreCase(name)) {
+                return dog;
+            }
+        }
+        throw new IllegalArgumentException("Cant find dog with this name: " + name);
+    }
 }
