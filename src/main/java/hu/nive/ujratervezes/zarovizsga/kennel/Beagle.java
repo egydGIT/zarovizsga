@@ -7,12 +7,14 @@ public class Beagle extends Dog{
     }
 
     @Override
-    void feed() {
-        happiness =+ 2;
+    public void feed() {
+        happiness += 2;                     // 1. megoldás
+//        increaseHappiness(2);             // 2. megoldás
     }
 
     @Override
-    void play(int hours) {
-        happiness = hours * 2;
+    public void play(int hours) {
+        happiness += hours * 2;             // 1. megoldás
+//        increaseHappiness(hours * 2);     // 2. megoldás
     }
 }

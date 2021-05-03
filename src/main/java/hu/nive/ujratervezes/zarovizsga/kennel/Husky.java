@@ -7,12 +7,14 @@ public class Husky extends Dog {
     }
 
     @Override
-    void feed() {
-        happiness =+ 4;
+    public void feed() {
+        happiness += 4;                     // 1. megoldás
+//        increaseHappiness(4);             // 2. megoldás
     }
 
     @Override
-    void play(int hours) {
-        happiness = hours * 3;
+    public void play(int hours) {
+        happiness += hours * 3;             // 1. megoldás
+//        increaseHappiness(hours * 3);     // 2. megoldás
     }
 }

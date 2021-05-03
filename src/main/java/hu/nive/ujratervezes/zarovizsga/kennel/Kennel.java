@@ -7,11 +7,11 @@ public class Kennel {
 
     private List<Dog> dogs = new ArrayList<>();
 
-    void addDog(Dog dog) {
+    public void addDog(Dog dog) {
         dogs.add(dog);
     }
 
-    void feedAll() {
+    public void feedAll() {
         for (Dog dog: dogs) {
             dog.feed();
         }
@@ -30,18 +30,21 @@ public class Kennel {
         throw new IllegalArgumentException("Cant find dog with this name: " + name);
     }
 
-    public void playWith(String name, int i) {
-        for (Dog dog: dogs) {
-            if(dog.getName().equalsIgnoreCase(name)) {
-                dog.play(i);
-            }
-        }
+    public void playWith(String name, int hours) {
+//        for (Dog dog: dogs) {
+//            if(dog.getName().equalsIgnoreCase(name)) {
+//                dog.play(hours);
+//            }
+//        }
+        Dog dog = findByName(name);                          // kódismétlés helyett met. felhasználás!
+        dog.play(hours);
+
     }
 
-    public List<String> getHappyDogNames(int i) {
+    public List<String> getHappyDogNames(int minHappiness) {
         List<String> names = new ArrayList<>();
         for (Dog dog: dogs) {
-            if ( dog.getHappiness() > i) {
+            if ( dog.getHappiness() > minHappiness ) {
                 names.add(dog.getName());
             }
         }
