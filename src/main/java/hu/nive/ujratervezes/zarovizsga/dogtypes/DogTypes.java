@@ -16,13 +16,13 @@ public class DogTypes {
         this.dataSource = dataSource;
     }
 
-    public List<String> getDogsByCountry(String hungary) {
+    public List<String> getDogsByCountry(String country) {
         try (
                 Connection conn = dataSource.getConnection();
                 PreparedStatement stmt =
                         conn.prepareStatement("select name from dog_types where country = ?");
         ) {
-            stmt.setString(1, hungary);
+            stmt.setString(1, country);
             return getStrings(stmt);
         } catch (SQLException sqle) {
             throw new IllegalArgumentException("Error by insert", sqle);
