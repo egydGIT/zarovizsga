@@ -5,29 +5,31 @@ import java.util.Set;
 
 public class DigitsCounter {
 
-    public int getCountOfDigits(String s) {
-        if (s == null) {
+    public int getCountOfDigits(String s) {                 // hány kül számjegy
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        Set<Character> chars = new HashSet<>();
+        for (char c : s.toCharArray()) {
+            if (Character.isDigit(c)) {
+                chars.add(c);
+            }
+        }
+        return chars.size();
+    }
+
+    public int getCountOfDifferentCharacters(String s) {    // hány kül karakter, akkor is, ha szóköz van
+        if (s == null || s.equals("")) {
             return 0;
         }
         Set<String> justDifferentChar = new HashSet<>();
-        if (isMoreWord(s)) {
-            String[] array = s.split(" ");                  // ?
-            for (int i = 0; i < array.length; i++) {
-                justDifferentChar.add(array[i]);
-            }
-        }
         String[] array = s.split("");
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].equals(" ")) {
+                continue;
+            }
             justDifferentChar.add((array[i]));
         }
         return justDifferentChar.size();
-    }
-
-    private boolean isMoreWord(String s) {
-        String[] array = s.split(" ");
-        if( array.length > 1) {
-            return true;
-        }
-        return false;
     }
 }
